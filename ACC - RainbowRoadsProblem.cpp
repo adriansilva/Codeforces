@@ -1,3 +1,8 @@
+/*
+Author: Adrian Silva Mendez
+As to: November 23rd 2020
+*/
+
 #include <bits/stdc++.h>
 
 #define pb push_back
