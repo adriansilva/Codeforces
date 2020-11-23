@@ -11,11 +11,9 @@ As to: November 23rd 2020
 
 using namespace std;
 
-typedef long long ll;
 typedef pair<int, int> ii;
 typedef vector<int> vi;
 
-#define MOD 1000000007
 #define maxN 50005
 
 vector<vector<ii> > graph(maxN);
@@ -64,8 +62,8 @@ int main()
         graph[node1-1].pb(mp(color,node2));
         graph[node2-1].pb(mp(color,node1));
     }
-
-    memset(goodNodes,1,sizeof(goodNodes));
+    
+    memset(goodNodes,1,sizeof(goodNodes)); // All nodes are good unless told otherwise
     for(int i = 0; i<n && !allNoGood; i++)
     {
         if(graph[i].size()<2 || visited[i]) continue; // We ignore leaf nodes and visited nodes
@@ -89,7 +87,7 @@ int main()
     {
         vi output;
         int cont = 0;
-
+        // We put all good nodes into our output vector
         for(int i = 0; i<n; i++)
         {
             if(goodNodes[i])
